@@ -12,15 +12,16 @@ The raw MADOC dataset files are **not included** in this repository due to their
 
 ## Preprocessed Splits
 
-The balanced train/val/test splits used in our experiments are also available separately:
+The balanced train/val/test splits used in our experiments are included in this repository:
 
-| File | Experiment | Description |
-|------|-----------|-------------|
-| `train_2x.parquet` | Exp 1 | 90,000 samples, tox-balanced |
-| `val_2x.parquet` | Exp 1 | 10,000 samples, tox-balanced |
-| `test_2x.parquet` | Both | 98,455 samples (Bluesky + Voat) |
-| `train_2x_length_balanced.parquet` | Exp 2 | 90,000 samples, tox+length-balanced |
-| `val_2x_length_balanced.parquet` | Exp 2 | 10,000 samples, tox+length-balanced |
+| File | Folder | Experiment | Description |
+|------|--------|-----------|-------------|
+| `train_2x.parquet` | `data/exp1/` | Exp 1 | 90,000 samples, tox-balanced |
+| `val_2x.parquet` | `data/exp1/` | Exp 1 | 10,000 samples, tox-balanced |
+| `test_2x.parquet` | `data/exp1/` | Both | 98,455 samples (Bluesky + Voat) |
+| `train_2x_length_balanced.parquet` | `data/exp2/` | Exp 2 | 90,000 samples, tox+length-balanced |
+| `val_2x_length_balanced.parquet` | `data/exp2/` | Exp 2 | 10,000 samples, tox+length-balanced |
+| `test_2x_length_balanced.parquet` | `data/exp2/` | Exp 2 | 98,455 samples (Bluesky + Voat) |
 
 To regenerate the splits from scratch, run:
 ```bash
