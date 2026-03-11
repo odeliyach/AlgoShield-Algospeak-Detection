@@ -94,23 +94,30 @@ Toxicity scores are discretized into **10 equal-width bins**. Sampling draws an 
 AlgoShield/
 │
 ├── scripts/
-│   ├── balanced_train_val_ds.py   # Toxicity-balanced stratified sampling
-│   ├── finetune.py                # Main fine-tuning pipeline
-│   └── qualitative_analysis.py   # Error analysis & example extraction
+│   ├── exp1/                              # Experiment 1 — Tox-balanced sampling
+│   │   ├── finetune.py                    # Main fine-tuning pipeline
+│   │   ├── balanced_train_val_ds.py       # Toxicity-bin stratified sampler
+│   │   └── qualitative_analysis.py        # Error analysis & example extraction
+│   └── exp2/                              # Experiment 2 — Tox+Length-balanced (ablation)
+│       ├── finetune.py                    # Same pipeline, different dataset
+│       ├── lengthXtox_DS.py               # Joint tox×length stratified sampler
+│       └── DS_analyzer.py                 # Dataset diagnostic tool
 │
 ├── data/
-│   └── samples/
-│       ├── fn_fixed_sample.csv    # FN cases resolved by fine-tuning (sample)
-│       ├── fn_still_sample.csv    # Persistent FN cases (sample)
-│       └── fp_new_sample.csv      # New FP cases introduced (sample)
+│   ├── samples/                           # Qualitative error analysis (Exp 1)
+│   │   ├── fn_fixed.csv                   # 93 FN cases resolved by fine-tuning
+│   │   ├── fn_still.csv                   # 72 persistent FN cases
+│   │   └── fp_new.csv                     # 85 new FP cases introduced
+│   └── README.md                          # Instructions to download MADOC from Zenodo
 │
 ├── results/
-│   ├── figures/                   # All paper figures (PDF + PNG)
-│   │   ├── training_curves.pdf
-│   │   ├── confusion_baseline_test.pdf
-│   │   ├── confusion_finetuned_test.pdf
-│   │   └── ...
-│   └── qualitative_report.txt     # Summary statistics from error analysis
+│   ├── exp1/                              # Experiment 1 results
+│   │   ├── figures/                       # Training curves, confusion matrices, dataset plots
+│   │   ├── qualitative_report.txt         # Summary statistics from error analysis
+│   │   └── results.json                   # Full metrics (baseline + fine-tuned)
+│   └── exp2/                              # Experiment 2 results (ablation)
+│       ├── figures/                       # Training curves, confusion matrices
+│       └── results.json                   # Full metrics (baseline + fine-tuned)
 │
 ├── README.md
 ├── requirements.txt
