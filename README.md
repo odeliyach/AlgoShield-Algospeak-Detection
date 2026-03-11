@@ -21,9 +21,12 @@ This project addresses the challenge through **domain-adaptive fine-tuning** of 
 | Model | Accuracy | Precision | Recall | F1 |
 |---|---|---|---|---|
 | Baseline (`martin-ha/toxic-comment-model`) | 59.0% | **70.3%** | 33.2% | 45.1% |
-| **Fine-tuned (ours)** | **62.8%** | 61.2% | **73.2%** | **66.7%** |
+| **Fine-tuned — Exp 1: Tox-balanced** (ours) | **62.8%** | 61.2% | **73.2%** | **66.7%** |
+| Fine-tuned — Exp 2: Tox+Length-balanced† | 62.1% | 62.3% | 70.1% | 66.0% |
 
 > *Evaluated on 98,455 out-of-domain test instances (Bluesky + Voat). In-domain validation: Acc=67.5%, Prec=64.8%, Rec=76.6%, F1=70.2%.*
+>
+> <sup>†</sup> **Exp 2 ablation:** Adding post-length balancing alongside toxicity-bin stratification reduces the val→test generalization gap from 3.5pt (Exp 1) to 0.3pt, at a marginal cost of 0.7pt F1. Exp 1 remains the primary reported model.
 
 ---
 
