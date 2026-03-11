@@ -97,18 +97,27 @@ AlgoShield/
 │   ├── exp1/                              # Experiment 1 — Tox-balanced sampling
 │   │   ├── finetune.py                    # Main fine-tuning pipeline
 │   │   ├── balanced_train_val_ds.py       # Toxicity-bin stratified sampler
-│   │   └── qualitative_analysis.py        # Error analysis & example extraction
+│   │   ├── qualitative_analysis.py        # Error analysis & example extraction
+│   │   └── analyze_ds.py                  # Dataset statistics & visualization
 │   └── exp2/                              # Experiment 2 — Tox+Length-balanced (ablation)
 │       ├── finetune.py                    # Same pipeline, different dataset
 │       ├── lengthXtox_DS.py               # Joint tox×length stratified sampler
 │       └── DS_analyzer.py                 # Dataset diagnostic tool
 │
 ├── data/
+│   ├── exp1/                              # Preprocessed splits — Experiment 1
+│   │   ├── train_2x.parquet               # 90,000 samples, tox-balanced
+│   │   ├── val_2x.parquet                 # 10,000 samples, tox-balanced
+│   │   └── test_2x.parquet                # 98,455 samples (Bluesky + Voat)
+│   ├── exp2/                              # Preprocessed splits — Experiment 2
+│   │   ├── train_2x_length_balanced.parquet
+│   │   ├── val_2x_length_balanced.parquet
+│   │   └── test_2x_length_balanced.parquet
 │   ├── samples/                           # Qualitative error analysis (Exp 1)
 │   │   ├── fn_fixed.csv                   # 93 FN cases resolved by fine-tuning
 │   │   ├── fn_still.csv                   # 72 persistent FN cases
 │   │   └── fp_new.csv                     # 85 new FP cases introduced
-│   └── README.md                          # Instructions to download MADOC from Zenodo
+│   └── README.md                          # Instructions to download raw MADOC from Zenodo
 │
 ├── results/
 │   ├── exp1/                              # Experiment 1 results
