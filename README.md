@@ -145,7 +145,7 @@ AlgoShield/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/[your-username]/AlgoShield.git
+git clone https://github.com/odeliyach/AlgoShield-Algospeak-Detection.git
 cd AlgoShield
 ```
 
@@ -206,7 +206,7 @@ If you use this work, please cite:
   author       = {Charitonova, Odeliya and Loshevsky, Alin and Pernik, Lior},
   year         = {2026},
   howpublished = {NLP Course Final Project, Tel Aviv University},
-  note         = {GitHub: https://github.com/[your-username]/AlgoShield}
+  note         = {GitHub: https://github.com/odeliyach/AlgoShield-Algospeak-Detection}
 }
 ```
 
