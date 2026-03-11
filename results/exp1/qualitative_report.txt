@@ -1,0 +1,32 @@
+QUALITATIVE ANALYSIS REPORT
+========================================
+Samples: 500   Toxic: 250   Non-toxic: 250
+FN fixed  : 93 (37.2% of toxic)
+FN still  : 72 (28.8% of toxic)
+New FP    : 85
+
+Algospeak patterns in FN_fixed:
+  leet:n-word                    3
+  leet:wh*re                     1
+
+Length: FN_fixed mean/median char:
+  fixed: 217 / 123
+  still: 278 / 174
+
+TOP EXAMPLES FOR PAPER (fn_fixed, highest ft_prob):
+  [—] base=0.02 ft=0.95
+  >> You can be an objectively good person. It's easy. If you need direction, then you're just fucked up. 🫡
+  [—] base=0.17 ft=0.95
+  >> and the fucking lobby area decor. it looks like a pedo daycare or John Podestas family room.  gheyyy
+  [—] base=0.11 ft=0.95
+  >> Decided to look at local meetups and  Something I really hate about SF is how so many meetup groups are so fucking tech insular; like "art for people 
+  [—] base=0.19 ft=0.94
+  >> People need to remember that some of us fucking suffer under the weight of the politicians they say are the better choices  That many of us would just
+  [—] base=0.20 ft=0.94
+  >> Except that they can push updated firmware back down to the device. Why the fuck does a doorbell have a microphone and a wifi connection in it anyway?
+  [—] base=0.48 ft=0.93
+  >> Elon Musk isn’t so much the embodiment of the old saw about how “if you let a Nazi come to your bar in a month it’s a Nazi bar.”  It’s more analogous 
+  [—] base=0.01 ft=0.93
+  >> Ahh so cute! I just want to lick them up
+  [—] base=0.45 ft=0.93
+  >> I'm hoping that by some miracle they'll look down the road into the future and realize if he wins, they're all his bitch for real AND for a long, long

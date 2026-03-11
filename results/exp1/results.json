@@ -1,0 +1,44 @@
+{
+  "hyperparameters": {
+    "seed": 42,
+    "lr": 2e-05,
+    "epochs": 10,
+    "batch_size": 8,
+    "grad_accum": 2,
+    "tox_bin_threshold": 5
+  },
+  "baseline": {
+    "val": {
+      "f1": 0.37222870478413067,
+      "precision": 0.6875,
+      "recall": 0.2552,
+      "accuracy": 0.5695569556955695,
+      "f1_macro": 0.5223645426218629
+    },
+    "test": {
+      "f1": 0.45112046720086924,
+      "precision": 0.7028353787558189,
+      "recall": 0.33216,
+      "accuracy": 0.5895180539332691,
+      "f1_macro": 0.5616488124453405
+    }
+  },
+  "finetuned": {
+    "val": {
+      "f1": 0.7018701870187019,
+      "precision": 0.6479350033852403,
+      "recall": 0.7656,
+      "accuracy": 0.6747674767476748,
+      "f1_macro": 0.672057205720572
+    },
+    "test": {
+      "f1": 0.6666484467523003,
+      "precision": 0.6121632926217165,
+      "recall": 0.73178,
+      "accuracy": 0.6283378193083134,
+      "f1_macro": 0.6233632410488608
+    },
+    "best_checkpoint": "/vol/joberant_nobck/data/NLP_368307701_2526a/liorpernik/models/algospeak-finetuned/%j_run/checkpoint-22500",
+    "best_val_f1": 0.7018701870187019
+  }
+}
