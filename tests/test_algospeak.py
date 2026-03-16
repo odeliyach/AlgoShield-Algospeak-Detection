@@ -10,6 +10,8 @@ import re
 import sys
 from unittest.mock import MagicMock
 
+from tests.conftest import SCRIPTS_EXP1_DIR
+
 # ---------------------------------------------------------------------------
 # Mock heavy dependencies before importing the script module.
 # torch.Tensor must be a real class so that scipy's issubclass checks don't fail.
@@ -25,9 +27,7 @@ for _mod in ("transformers",):
     if _mod not in sys.modules:
         sys.modules[_mod] = MagicMock()
 
-_script_path = os.path.join(  # noqa: E402
-    os.path.dirname(__file__), "..", "scripts", "exp1", "qualitative_analysis.py"
-)
+_script_path = os.path.join(SCRIPTS_EXP1_DIR, "qualitative_analysis.py")  # noqa: E402
 _spec = importlib.util.spec_from_file_location("qualitative_analysis", _script_path)
 _qa = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_qa)

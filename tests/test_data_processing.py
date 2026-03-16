@@ -15,6 +15,8 @@ from unittest.mock import MagicMock
 import pandas as pd
 import polars as pl
 
+from tests.conftest import SCRIPTS_EXP1_DIR
+
 # ---------------------------------------------------------------------------
 # Mock heavy dependencies before importing script modules.
 # torch.Tensor must be a real class so that scipy's issubclass checks don't fail.
@@ -29,9 +31,7 @@ for _mod in ("transformers", "datasets", "accelerate", "matplotlib", "matplotlib
 sys.modules["matplotlib"].use = MagicMock()
 
 # Load finetune module for load_parquet / TOX_BIN_THRESHOLD
-_ft_path = os.path.join(  # noqa: E402
-    os.path.dirname(__file__), "..", "scripts", "exp1", "finetune.py"
-)
+_ft_path = os.path.join(SCRIPTS_EXP1_DIR, "finetune.py")  # noqa: E402
 _spec = importlib.util.spec_from_file_location("finetune", _ft_path)
 _ft = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_ft)
@@ -40,9 +40,7 @@ TOX_BIN_THRESHOLD = _ft.TOX_BIN_THRESHOLD   # 5
 load_parquet = _ft.load_parquet
 
 # Load balanced sampler
-_bs_path = os.path.join(  # noqa: E402
-    os.path.dirname(__file__), "..", "scripts", "exp1", "balanced_train_val_ds.py"
-)
+_bs_path = os.path.join(SCRIPTS_EXP1_DIR, "balanced_train_val_ds.py")  # noqa: E402
 _spec2 = importlib.util.spec_from_file_location("balanced_train_val_ds", _bs_path)
 _bs = importlib.util.module_from_spec(_spec2)
 _spec2.loader.exec_module(_bs)

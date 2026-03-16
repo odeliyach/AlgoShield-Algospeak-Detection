@@ -12,6 +12,8 @@ from unittest.mock import MagicMock
 import numpy as np
 from sklearn.metrics import classification_report
 
+from tests.conftest import SCRIPTS_EXP1_DIR
+
 # ---------------------------------------------------------------------------
 # Mock ALL heavy dependencies before importing the finetune module.
 # torch.Tensor must be a real class so that scipy's issubclass checks don't fail.
@@ -26,9 +28,7 @@ for _mod in ("transformers", "datasets", "accelerate", "matplotlib", "matplotlib
 
 sys.modules["matplotlib"].use = MagicMock()
 
-_script_path = os.path.join(  # noqa: E402
-    os.path.dirname(__file__), "..", "scripts", "exp1", "finetune.py"
-)
+_script_path = os.path.join(SCRIPTS_EXP1_DIR, "finetune.py")  # noqa: E402
 _spec = importlib.util.spec_from_file_location("finetune", _script_path)
 _ft = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_ft)
