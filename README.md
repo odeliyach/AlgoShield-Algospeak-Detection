@@ -3,7 +3,7 @@
 > **Fine-tuning a compact transformer for robust detection of evasive toxic language across decentralized social media platforms.**
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)
-[![HuggingFace](https://img.shields.io/badge/🤗-Transformers-yellow)](https://huggingface.co/docs/transformers)
+[![HuggingFace](https://img.shields.io/badge/🤗-Model-yellow)](https://huggingface.co/odeliyach/AlgoShield-Algospeak-Detection)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
@@ -133,7 +133,7 @@ AlgoShield/
 └── LICENSE
 ```
 
-> **Note:** Raw MADOC parquet files are not included (dataset available at [Zenodo](https://zenodo.org/records/14637314)). Model weights available at [HuggingFace Hub — link TBD].
+> **Note:** Raw MADOC parquet files are not included (dataset available at [Zenodo](https://zenodo.org/records/14637314)). Model weights available at [HuggingFace Hub](https://huggingface.co/odeliyach/AlgoShield-Algospeak-Detection).
 
 ---
 
@@ -193,7 +193,7 @@ python scripts/qualitative_analysis.py \
 | 📄 Full Paper (ACL format) | *[Link to paper — TBD upon publication]* |
 | 🗃️ MADOC Dataset | [Zenodo — DOI: 10.5281/zenodo.14637314](https://zenodo.org/records/14637314) |
 | 🤗 Base Model | [martin-ha/toxic-comment-model](https://huggingface.co/martin-ha/toxic-comment-model) |
-| 🤗 Fine-tuned Model Weights | *[HuggingFace Hub — TBD]* |
+| 🤗 Fine-tuned Model Weights | [odeliyach/AlgoShield-Algospeak-Detection](https://huggingface.co/odeliyach/AlgoShield-Algospeak-Detection) |
 
 ---
 
@@ -206,7 +206,7 @@ If you use this work, please cite:
   author       = {Charitonova, Odeliya and Loshevsky, Alin and Pernik, Lior},
   year         = {2026},
   howpublished = {NLP Course Final Project, Tel Aviv University},
-  note         = {GitHub: https://github.com/odeliyach/AlgoShield-Algospeak-Detection}
+  note         = {GitHub: https://github.com/odeliyach/AlgoShield-Algospeak-Detection; Model: https://huggingface.co/odeliyach/AlgoShield-Algospeak-Detection}
 }
 ```
 
