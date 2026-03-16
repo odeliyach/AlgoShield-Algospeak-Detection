@@ -12,7 +12,7 @@
 
 Automated content moderation systems face a fundamental challenge: users increasingly exploit **Algospeak** — the intentional substitution of characters, phonetic distortions, and coded slang — to evade toxicity classifiers. Standard models trained on single-platform, lexically explicit datasets fail to generalize across communities where norms and evasion strategies differ substantially.
 
-This project addresses the challenge through **domain-adaptive fine-tuning** of a DistilBERT-based classifier on the [MADOC dataset](https://zenodo.org/records/XXXXXXX) — a multi-platform corpus spanning Reddit, Koo, Bluesky, and Voat. A **Toxicity-Balanced Stratified Sampling** strategy ensures uniform representation across fine-grained toxicity intensity bins, preventing any single severity level from dominating the training signal. Evaluated on an entirely held-out set of platforms never seen during training (Bluesky + Voat), the fine-tuned model achieves **F1 = 66.7%** and **Recall = 73.2%**, compared to **F1 = 45.1%** and **Recall = 33.2%** for the untuned baseline — a **+107% improvement in Recall** with no retraining on the target platforms.
+This project addresses the challenge through **domain-adaptive fine-tuning** of a DistilBERT-based classifier on the [MADOC dataset](https://zenodo.org/records/14637314) — a multi-platform corpus spanning Reddit, Koo, Bluesky, and Voat. A **Toxicity-Balanced Stratified Sampling** strategy ensures uniform representation across fine-grained toxicity intensity bins, preventing any single severity level from dominating the training signal. Evaluated on an entirely held-out set of platforms never seen during training (Bluesky + Voat), the fine-tuned model achieves **F1 = 66.7%** and **Recall = 73.2%**, compared to **F1 = 45.1%** and **Recall = 33.2%** for the untuned baseline — a **+107% improvement in Recall** with no retraining on the target platforms.
 
 ---
 
@@ -57,7 +57,7 @@ Structured error analysis on 500 stratified test instances revealed three domina
 ## Methodology
 
 ### 1. Data Construction
-- **Source:** [MADOC v1.0](https://zenodo.org/records/XXXXXXX) — 236M annotated social media comments
+- **Source:** [MADOC v1.0](https://zenodo.org/records/14637314) — 236M annotated social media comments
 - **Train/Val platforms:** Reddit + Koo (in-domain)
 - **Test platforms:** Bluesky + Voat (entirely held-out, never seen during training)
 - **Preprocessing:** URL removal, emoji stripping, minimum length filtering (≥10 chars)
@@ -133,7 +133,7 @@ AlgoShield/
 └── LICENSE
 ```
 
-> **Note:** Raw MADOC parquet files are not included (dataset available at [Zenodo](https://zenodo.org/records/XXXXXXX)). Model weights available at [HuggingFace Hub — link TBD].
+> **Note:** Raw MADOC parquet files are not included (dataset available at [Zenodo](https://zenodo.org/records/14637314)). Model weights available at [HuggingFace Hub — link TBD].
 
 ---
 
@@ -157,7 +157,7 @@ pip install -r requirements.txt
 ### 3. Download the MADOC dataset
 ```bash
 # Download from Zenodo and place parquet files in data/madoc/
-# Dataset DOI: https://zenodo.org/records/XXXXXXX
+# Dataset DOI: https://doi.org/10.5281/zenodo.14637314
 ```
 
 ### 4. Run the balanced sampling pipeline
@@ -191,7 +191,7 @@ python scripts/qualitative_analysis.py \
 | Resource | Link |
 |---|---|
 | 📄 Full Paper (ACL format) | *[Link to paper — TBD upon publication]* |
-| 🗃️ MADOC Dataset | [Zenodo — DOI TBD](https://zenodo.org/records/XXXXXXX) |
+| 🗃️ MADOC Dataset | [Zenodo — DOI: 10.5281/zenodo.14637314](https://zenodo.org/records/14637314) |
 | 🤗 Base Model | [martin-ha/toxic-comment-model](https://huggingface.co/martin-ha/toxic-comment-model) |
 | 🤗 Fine-tuned Model Weights | *[HuggingFace Hub — TBD]* |
 
@@ -207,6 +207,18 @@ If you use this work, please cite:
   year         = {2026},
   howpublished = {NLP Course Final Project, Tel Aviv University},
   note         = {GitHub: https://github.com/odeliyach/AlgoShield-Algospeak-Detection}
+}
+```
+
+If you use the MADOC dataset, please cite the original dataset:
+```bibtex
+@dataset{fillies_paschke_2024_madoc,
+  author    = {Fillies, Sebastian and Paschke, Adrian},
+  title     = {The MADOC Dataset: Multi-Platform Aggregated Dataset of Online Communities},
+  year      = {2024},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.14637314},
+  url       = {https://doi.org/10.5281/zenodo.14637314}
 }
 ```
 

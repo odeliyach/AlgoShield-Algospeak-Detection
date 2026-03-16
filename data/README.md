@@ -4,7 +4,7 @@ The raw MADOC dataset files are **not included** in this repository due to their
 
 ## Download Instructions
 
-1. Go to the MADOC dataset page on Zenodo: [https://zenodo.org/records/XXXXXXX](https://zenodo.org/records/XXXXXXX)
+1. Go to the MADOC dataset page on Zenodo: [https://zenodo.org/records/14637314](https://zenodo.org/records/14637314)
 2. Download the following parquet files and place them in a `data/madoc/` folder:
    - `reddit_*_madoc.parquet` (multiple files)
    - `koo_madoc.parquet`
