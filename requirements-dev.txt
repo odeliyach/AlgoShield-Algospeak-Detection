@@ -1,0 +1,12 @@
+# AlgoShield — Development / Testing Dependencies
+# Install with: pip install -r requirements-dev.txt
+#
+# These packages are sufficient to run the test suite (tests/).
+# They do NOT include the heavy ML training stack (torch, transformers).
+
+pytest>=7.4.0
+numpy>=1.24.0
+pandas>=2.0.0
+polars>=0.18.0
+pyarrow>=12.0.0
+scikit-learn>=1.2.0
